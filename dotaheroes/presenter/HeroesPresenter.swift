@@ -17,7 +17,7 @@ class HeroesPresenter: HeroesInteractorToPresenter {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func heroesListRequestSuccess(heroes: [Hero]) {
-        var roles: [String] = []
+        var roles: [String] = ["All"]
         for hero in heroes {
             for role in hero.roles {
                 if !roles.contains(role) {
@@ -42,7 +42,7 @@ extension HeroesPresenter: HeroesViewToPresenter {
             
             let heroEntities = fetchHeroes()
             var result: [HeroEntity] = []
-            var roles: [String] = []
+            var roles: [String] = ["All"]
             
             for hero in heroEntities {
                 if hero.roles?.contains(roleValue) ?? false {

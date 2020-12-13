@@ -30,6 +30,7 @@
 		CE8C34192584EEBC00B5660F /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C34182584EEBC00B5660F /* HeroDetailViewController.swift */; };
 		CEBC386B2586699500B9D869 /* HeroEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC38692586699500B9D869 /* HeroEntity+CoreDataClass.swift */; };
 		CEBC386C2586699500B9D869 /* HeroEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC386A2586699500B9D869 /* HeroEntity+CoreDataProperties.swift */; };
+		CEBC386E25869BFF00B9D869 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC386D25869BFF00B9D869 /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		CE8C34182584EEBC00B5660F /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		CEBC38692586699500B9D869 /* HeroEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		CEBC386A2586699500B9D869 /* HeroEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		CEBC386D25869BFF00B9D869 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				CE28BF2325821C8A00895FFF /* Info.plist */,
 				CE28BF1B25821C8500895FFF /* dotaheroes.xcdatamodeld */,
 				CE8C34162584EBEE00B5660F /* sample_response.json */,
+				CEBC386D25869BFF00B9D869 /* Utility.swift */,
 			);
 			path = dotaheroes;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				CE28BF1325821C8500895FFF /* AppDelegate.swift in Sources */,
 				CE28BF4F2582244F00895FFF /* Heroes.swift in Sources */,
 				CE76A86A2583C56700CF49D5 /* HeroesInteractor.swift in Sources */,
+				CEBC386E25869BFF00B9D869 /* Utility.swift in Sources */,
 				CE28BF4D2582236800895FFF /* HeroesViewController.swift in Sources */,
 				CEBC386C2586699500B9D869 /* HeroEntity+CoreDataProperties.swift in Sources */,
 				CE76A86E2583C5E100CF49D5 /* CustomPickerView.swift in Sources */,

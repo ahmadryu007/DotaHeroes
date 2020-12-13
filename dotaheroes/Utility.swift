@@ -1,21 +1,19 @@
 //
-//  HeroEntity+CoreDataClass.swift
+//  Utility.swift
 //  dotaheroes
 //
-//  Created by Ahmad Krisman Ryuzaki on 13/12/20.
+//  Created by Ahmad Krisman Ryuzaki on 14/12/20.
 //  Copyright © 2020 ahmadkrisman. All rights reserved.
-//
 //
 
 import Foundation
-import CoreData
 
-@objc(HeroEntity)
-public class HeroEntity: NSManagedObject {
-    class func getSimilar(hero: HeroEntity, from: [HeroEntity]) -> [HeroEntity] {
-        var result: [HeroEntity] = []
+class Utility {
+    class func getSimilar(hero: Hero, from: [Hero]) -> [Hero] {
+        
+        var result: [Hero] = []
         for value in from {
-            if (value.primaryAttr == hero.primaryAttr) && (value.name != hero.name) {
+            if (value.primaryAttr == hero.primaryAttr) && (value.id != hero.id) {
                 result.append(value)
             }
         }

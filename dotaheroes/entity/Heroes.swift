@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Hero
-struct Hero: Codable {
+class Hero: Codable {
     let id: Int?
     let name : String
     let localizedName: String?
@@ -93,4 +93,3 @@ struct Hero: Codable {
 }
 
 typealias Heroes = [Hero]
-

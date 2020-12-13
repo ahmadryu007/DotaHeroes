@@ -50,7 +50,7 @@ class HeroesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        title = "All Heroes"
+        title = "All"
         
         presenter?.getHeroes(role: nil)
         loadingView()
@@ -148,7 +148,7 @@ extension HeroesViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let similarHero: [HeroEntity] = []
+        let similarHero: [HeroEntity] = HeroEntity.getSimilar(hero: self.heroes[indexPath.row], from: self.heroes)
         let hero = self.heroes[indexPath.row]
         let detailView = Router.heroDetailRouter(hero: hero, similarHero: similarHero)
         
@@ -175,6 +175,8 @@ extension HeroesViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         if (row != 0){
             self.selectedRoles = roles[row]
         }
+        
+        self.title = roles[row]
     }
     
 }
