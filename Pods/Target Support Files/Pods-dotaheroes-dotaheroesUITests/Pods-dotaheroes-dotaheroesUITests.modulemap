@@ -1,0 +1,6 @@
+framework module Pods_dotaheroes_dotaheroesUITests {
+  umbrella header "Pods-dotaheroes-dotaheroesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
