@@ -39,31 +39,39 @@ extension HeroesPresenter: HeroesViewToPresenter {
     func getHeroes(role: String?) {
         
         if let roleValue = role {
-            
-            let heroEntities = fetchHeroes()
-            var result: [HeroEntity] = []
-            var roles: [String] = ["All"]
-            
-            for hero in heroEntities {
-                if hero.roles?.contains(roleValue) ?? false {
-                    result.append(hero)
-                }
-                for role in hero.roles ?? [] {
-                    if !roles.contains(role) {
-                        roles.append(role)
-                    }
-                }
-            }
-            
-            view?.heroesLoaded(heroes: result, roles: roles)
-            
+            getHeroesDataLocalBy(role: roleValue)
         } else {
             if interactor?.checkInternetConnection() ?? true {
                 interactor?.heroesListRequest()
             } else {
                 view?.showError(message: "No Internet Connection")
+                getHeroesDataLocalBy(role: "All")
             }
         }
+    }
+    
+    func getHeroesDataLocalBy(role: String){
+        let heroEntities = fetchHeroes()
+        var result: [HeroEntity] = []
+        var roles: [String] = ["All"]
+        
+        for hero in heroEntities {
+            if role != "All" {
+                if hero.roles?.contains(role) ?? false {
+                    result.append(hero)
+                }
+            } else {
+                result.append(hero)
+            }
+            
+            for role in hero.roles ?? [] {
+                if !roles.contains(role) {
+                    roles.append(role)
+                }
+            }
+        }
+        
+        view?.heroesLoaded(heroes: result, roles: roles)
     }
 }
 
